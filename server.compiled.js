@@ -22,7 +22,7 @@ function () {
   _createClass(App, [{
     key: "init",
     value: function init() {
-      var PORT = process.env.HTTP_PORT || 4001;
+      var PORT = process.env.HTTP_PORT || 8081;
       var app = (0, _express["default"])();
       app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client', 'build')));
       app.get('/', function (req, res) {

@@ -4,7 +4,7 @@ import path from 'path';
 class App{
     init(){
 
-        const PORT = process.env.HTTP_PORT || 8080;
+        const PORT = process.env.HTTP_PORT || 8081;
         const app = express();
 
 
