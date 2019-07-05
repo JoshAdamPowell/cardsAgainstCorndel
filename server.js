@@ -22,7 +22,6 @@ class App{
         console.log(`Server listening at port ${PORT}.`);
     });
 }
-}
 
 let program = new App()
 program.init();
