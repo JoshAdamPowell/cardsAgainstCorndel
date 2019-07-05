@@ -1,9 +1,7 @@
 import React from 'react';
 import './css/Landing.css';
 import CorndelLogo from './img/Corndel-Logo.png'
-import usernames from './usernames.js';
-
-const fs = require('fs');
+import placeholders from './usernames.js';
 
 export default class Landing extends React.Component {
 	constructor(props){
@@ -12,7 +10,7 @@ export default class Landing extends React.Component {
 	}
 
 	componentDidMount(){
-		let ranName = usernames[Math.floor(Math.random()*usernames.length)]
+		let ranName = placeholders[Math.floor(Math.random() * placeholders.length)]
 		document.getElementById('username-input').placeholder = ranName.name;
 	}
 
@@ -22,13 +20,22 @@ export default class Landing extends React.Component {
 
 	handleSubmit(){
 		console.log(`Submitted: ${this.state.username}`)
+		fetch('/', {
+			method: 'POST',
+			body: JSON.stringify(this.state)
+		})
+		.then(res => {
+			if (res.status === 204){
+				window.location.href = '/game';
+			}
+		})
 	}
 	
 	render() {
 		return (
 			<div className="landing-box">
 				<div className="landing-header">
-					<h1>Cards Against </h1>
+					<h1>Cards Against</h1>
 					<img className="corndel-logo" src={CorndelLogo} alt="Corndel Logo"/>
 				</div>
 				<div className="landing-input-box">
@@ -37,7 +44,7 @@ export default class Landing extends React.Component {
 						name="username"
 						type="text"
 						id="username-input"
-						placeholder="iHaveSyphilis69..."
+						placeholder=""
 						onChange={(e) => this.setState({username: e.target.value})} />
 						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
 				</div>
