@@ -5,9 +5,9 @@ import testController from './api/testController';
 class App{
     init(){
 
-        const PORT = process.env.HTTP_PORT || 8081;
+        const PORT = process.env.HTTP_PORT || 4001;
         const app = express();
-
+        app.get('/flower', (req, res) => res.json({name: 'Josh'}))
 
         app.use(express.static(path.join(__dirname, 'client', 'build')));
         testController.register(app);
