@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import testController from './api/testController';
 
 class App{
     init(){
@@ -9,18 +10,7 @@ class App{
 
 
         app.use(express.static(path.join(__dirname, 'client', 'build')));
-
-
-        app.get('/', (req, res) => {
-        res.send('just gonna send it');
-        });
-
-        app.get('/flower', (req, res) => {
-        res.json({
-        name: 'Dandelion',
-        colour: 'Blue-ish'
-        });
-        });
+        testController.register(app);
 
 
 
