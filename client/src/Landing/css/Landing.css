@@ -1,0 +1,52 @@
+.landing-box {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 15em;
+}
+
+.landing-header h1 {
+	font-weight: 900;
+	font-size: 4em;
+	margin: 0;
+	padding: 0;
+}
+
+.landing-header {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+.landing-input-box input {
+	padding: 10px 50px 10px 25px;
+	border-radius: 5px 0 0 5px;
+	border: none;
+	color: #fafafa;
+	font-weight: 700;
+	background-color: #0f0f0f;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 2em;
+}
+
+.landing-input-box input::placeholder {
+	font-weight: 700;
+	color: #afafaf;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.landing-input-box button {
+	padding: 10px 20px 10px 20px;
+	border-radius: 0 5px 5px 0;
+	border: none;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.corndel-logo {
+	padding: 0;
+	width: 300px;
+	margin: 0 0 0 10px;
+}

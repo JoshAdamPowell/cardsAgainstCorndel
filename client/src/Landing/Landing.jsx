@@ -1,4 +1,6 @@
 import React from 'react';
+import './css/Landing.css';
+import CorndelLogo from './img/Corndel-Logo.png'
 
 export default class Landing extends React.Component {
 	constructor(props){
@@ -16,18 +18,19 @@ export default class Landing extends React.Component {
 	
 	render() {
 		return (
-			<div>
-				<div className="landing-heading">
-					<h1>Welcome to Cards Against Corndel</h1>
+			<div className="landing-box">
+				<div className="landing-header">
+					<h1>Cards Against </h1>
+					<img className="corndel-logo" src={CorndelLogo} alt="Corndel Logo"/>
 				</div>
-				<div>
+				<div className="landing-input-box">
 					<input
 						className=""
 						name="username"
 						type="text"
 						placeholder="Username"
 						onChange={(e) => this.setState({username: e.target.value})} />
-						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Log in</button>
+						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Submit</button>
 				</div>
 			</div>
 		)
