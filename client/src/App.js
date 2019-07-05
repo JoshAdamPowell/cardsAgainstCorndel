@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Landing from './Landing/Landing'
 
 class App extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.colour}</p>
+        <Landing></Landing>
       </div>
     );
   }
 }
+
 export default App;
