@@ -6,12 +6,8 @@ import placeholders from './usernames.js';
 export default class Landing extends React.Component {
 	constructor(props){
 		super(props)
+		this.placeholderName = placeholders[Math.floor(Math.random() * placeholders.length)]
 		this.state = {username: ""}
-	}
-
-	componentDidMount(){
-		let ranName = placeholders[Math.floor(Math.random() * placeholders.length)]
-		document.getElementById('username').placeholder = ranName.name;
 	}
 
 	validateForm(){
@@ -22,7 +18,7 @@ export default class Landing extends React.Component {
 		fetch('/', {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(this.state)
+			body: JSON.stringify({username: this.state.username})
 		})
 		.then(res => {
 			if (res.status === 200){
@@ -45,7 +41,7 @@ export default class Landing extends React.Component {
 						name="username"
 						type="text"
 						id="username"
-						placeholder=""
+						placeholder={this.placeholderName.name}
 						onChange={(e) => this.setState({username: e.target.value})} />
 						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
 				</div>
