@@ -1,7 +1,8 @@
 export default class LandingController {
     static register(app){
-        app.get('/', (req, res) => {
-            res.cookie(username, req.body.username)
+        app.post('/', (req, res) => {
+            res.cookie('User', `${req.body.username}`)
+            res.status(200).send({message: 'Submission successful.'})
         })
     }
 }

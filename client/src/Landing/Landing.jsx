@@ -11,7 +11,7 @@ export default class Landing extends React.Component {
 
 	componentDidMount(){
 		let ranName = placeholders[Math.floor(Math.random() * placeholders.length)]
-		document.getElementById('username-input').placeholder = ranName.name;
+		document.getElementById('username').placeholder = ranName.name;
 	}
 
 	validateForm(){
@@ -19,14 +19,15 @@ export default class Landing extends React.Component {
 	}
 
 	handleSubmit(){
-		console.log(`Submitted: ${this.state.username}`)
 		fetch('/', {
-			method: 'POST',
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(this.state)
 		})
 		.then(res => {
-			if (res.status === 204){
-				window.location.href = '/game';
+			if (res.status === 200){
+				console.log('Working callback.')
+				// Add redirect to main game.
 			}
 		})
 	}
@@ -43,7 +44,7 @@ export default class Landing extends React.Component {
 						className=""
 						name="username"
 						type="text"
-						id="username-input"
+						id="username"
 						placeholder=""
 						onChange={(e) => this.setState({username: e.target.value})} />
 						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
