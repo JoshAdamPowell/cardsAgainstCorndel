@@ -12,7 +12,6 @@ export default class Landing extends React.Component {
 	}
 
 	componentDidMount(){
-		
 		let ranName = usernames[Math.floor(Math.random()*usernames.length)]
 		document.getElementById('username-input').placeholder = ranName.name;
 	}
@@ -40,7 +39,7 @@ export default class Landing extends React.Component {
 						id="username-input"
 						placeholder="iHaveSyphilis69..."
 						onChange={(e) => this.setState({username: e.target.value})} />
-						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Submit</button>
+						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
 				</div>
 			</div>
 		)

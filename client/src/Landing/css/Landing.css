@@ -45,6 +45,11 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+.landing-input-box button:hover {
+	cursor: pointer;
+	background-color: #c0c0c0;
+}
+
 .corndel-logo {
 	padding: 0;
 	width: 300px;
