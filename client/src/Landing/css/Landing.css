@@ -28,12 +28,12 @@
 	font-weight: 700;
 	background-color: #0f0f0f;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 2em;
+	margin-top: 4em;
 }
 
 .landing-input-box input::placeholder {
 	font-weight: 700;
-	color: #afafaf;
+	color: #858585;
 	font-family: 'Open Sans', sans-serif;
 }
 

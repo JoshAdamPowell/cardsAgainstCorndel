@@ -1,11 +1,20 @@
 import React from 'react';
 import './css/Landing.css';
 import CorndelLogo from './img/Corndel-Logo.png'
+import usernames from './usernames.js';
+
+const fs = require('fs');
 
 export default class Landing extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {username: ""}
+	}
+
+	componentDidMount(){
+		
+		let ranName = usernames[Math.floor(Math.random()*usernames.length)]
+		document.getElementById('username-input').placeholder = ranName.name;
 	}
 
 	validateForm(){
@@ -28,7 +37,8 @@ export default class Landing extends React.Component {
 						className=""
 						name="username"
 						type="text"
-						placeholder="Username"
+						id="username-input"
+						placeholder="iHaveSyphilis69..."
 						onChange={(e) => this.setState({username: e.target.value})} />
 						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Submit</button>
 				</div>
