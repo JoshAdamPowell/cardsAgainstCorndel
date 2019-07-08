@@ -2,8 +2,8 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import testController from './testController';
-import LandingController from './landingController'
+import testController from './api/testController';
+import LandingController from './api/landingController'
 
 class App{
     init(){
@@ -11,7 +11,8 @@ class App{
         const PORT = process.env.HTTP_PORT || 4001;
         const APP = express();
 
-        APP.use(express.static(path.join(__dirname, 'client', 'build')));
+        APP.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+        console.log(path.join(__dirname,'..', 'client', 'build'))
         APP.use(bodyParser());
         APP.use(cookieParser());
 
@@ -19,6 +20,8 @@ class App{
         LandingController.register(APP);
 
         APP.listen(PORT, () => {
+            console.log('blah');
+            console.log(path.join(__dirname,'..', 'client', 'build'))
         console.log(`Server listening at port ${PORT}.`);
         });
     }

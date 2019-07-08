@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js --ignore client",
+    "start": "nodemon --exec babel-node api/index.js --ignore client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel api --out-dir build"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,10 @@
     "@babel/core": "^7.5.0",
     "@babel/node": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
-    "nodemon": "^1.19.1"
+    "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-node-externals": "^1.7.2"
   }
 }
