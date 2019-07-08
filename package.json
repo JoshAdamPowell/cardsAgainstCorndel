@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel server.js --out-file server.compiled.js"
+    "build": "babel api --out-dir build"
   },
   "repository": {
     "type": "git",

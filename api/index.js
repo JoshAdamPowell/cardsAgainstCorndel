@@ -2,8 +2,8 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import testController from './api/testController';
-import LandingController from './api/landingController'
+import testController from './testController';
+import LandingController from './landingController'
 
 class App{
     init(){
