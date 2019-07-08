@@ -12,7 +12,6 @@ class App{
         const APP = express();
 
         APP.use(express.static(path.join(__dirname, '..', 'client', 'build')));
-        console.log(path.join(__dirname,'..', 'client', 'build'))
         APP.use(bodyParser());
         APP.use(cookieParser());
 
@@ -20,9 +19,7 @@ class App{
         LandingController.register(APP);
 
         APP.listen(PORT, () => {
-            console.log('blah');
-            console.log(path.join(__dirname,'..', 'client', 'build'))
-        console.log(`Server listening at port ${PORT}.`);
+            console.log(`Server listening at port ${PORT}.`);
         });
     }
 }
