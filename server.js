@@ -20,7 +20,8 @@ class App{
 
         APP.listen(PORT, () => {
         console.log(`Server listening at port ${PORT}.`);
-    });
+        });
+    }
 }
 
 let program = new App()
