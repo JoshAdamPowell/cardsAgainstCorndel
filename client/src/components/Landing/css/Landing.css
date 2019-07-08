@@ -32,6 +32,10 @@
 	width: 300px;
 }
 
+.landing-input-box {
+	text-align: center;
+}
+
 .landing-input-box input::placeholder {
 	font-weight: 700;
 	color: #858585;
