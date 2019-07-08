@@ -7,8 +7,8 @@ import LandingController from './api/landingController'
 
 class App{
     init(){
-
-        const PORT = process.env.HTTP_PORT || 4001;
+        console.log(process.env)
+        const PORT = process.env.PORT || 4001;
         const APP = express();
 
         APP.use(express.static(path.join(__dirname, '..', 'client', 'build')));
