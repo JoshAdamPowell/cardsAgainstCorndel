@@ -1,32 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Link, Route, Redirect} from "react-router-dom";
+import Game from './components/Game/Game';
+import Home from './components/Landing/Landing';
+import EndGame from './components/EndGame/EndGame';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flower: {}
-    }
-    this.getFlower();
-  }
-
-  getFlower() {
-    fetch('/flower')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          flower: data
-        });
-      });
-  }
-  
-  render() {
-    return (
-      <div className="App">
-        <h1>{this.state.flower.name}</h1>
-        <p>{this.state.flower.colour}</p>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <Route exact path="/" component={Home} />
+      <Route path="/game" component={Game} />
+      <Route path="/endgame" component={EndGame} />
+    </Router>
+  )
 }
+
 export default App;
