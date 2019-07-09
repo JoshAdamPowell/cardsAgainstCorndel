@@ -1,7 +1,11 @@
 import React from 'react';
+import AceEditor from 'react-ace';
+import "brace/mode/html";
+import "brace/mode/css";
 import './css/Cards.css';
 import blackCards from './black-cards.js'
 import whiteCards from './white-cards.js'
+import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
 
 export default class Framework extends React.Component {
   constructor(props){
@@ -47,7 +51,30 @@ export default class Framework extends React.Component {
 						</div>
 					</div>
 					<div className="section-side">
-						<iframe className="embed" src="https://codepen.io/charliequin/embed/XLyKPR"></iframe>
+						<h6 className="section-header">HTML</h6>
+						<AceEditor
+							className="editor"
+							mode="html"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={whiteHTML}
+							maxLines="4"
+							setOptions={{readOnly: true}}
+						/>
+						<h6 className="section-header">CSS</h6>
+						<AceEditor
+							className="editor"
+							mode="css"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={whiteCSS}
+							maxLines="13"
+							setOptions={{readOnly: true}}
+						/>
 						<button className="btn-changer" onClick={() => this.changeWhiteBody()} type="submit">Test Body</button>
 					</div>
 				</div>
@@ -57,18 +84,35 @@ export default class Framework extends React.Component {
 						<div className="black-card-body" dangerouslySetInnerHTML={{__html: this.state.blackCard}}>
 						</div>
 					</div>
-					<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
-					{/* <iframe src="https://codepen.io/charliequin/embed/RzqREE"></iframe> */}
-				</div>
-
-				<div className="section">
-					<div className="scoreboard">
-						<div className="sb-round">
-						</div>
-						<div className="sb-players">
-						</div>
+					<div className="section-side">
+						<h6 className="section-header">HTML</h6>
+						<AceEditor
+							className="editor"
+							mode="html"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={blackHTML}
+							maxLines="4"
+							setOptions={{readOnly: true}}
+						/>
+						<h6 className="section-header">CSS</h6>
+						<AceEditor
+							className="editor"
+							mode="css"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={blackCSS}
+							maxLines="13"
+							setOptions={{readOnly: true}}
+						/>
+						<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
 					</div>
 				</div>
+
 			</div>
 			</>
     )
