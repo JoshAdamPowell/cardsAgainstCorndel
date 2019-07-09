@@ -12,7 +12,8 @@ export default class Framework extends React.Component {
 			super(props)
 			this.state = {
 				blackCard: null,
-				whiteCard: null
+				whiteCard: null,
+				combination: null
 			}
   }
 
