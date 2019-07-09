@@ -35,7 +35,7 @@
 
 .section-side {
     display: flex;
-    align-items: flex-startd;
+    align-items: flex-start;
     flex-direction: column;
 }
 
