@@ -31,6 +31,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-node-externals": "^1.7.2"

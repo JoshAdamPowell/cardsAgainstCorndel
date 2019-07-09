@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+require('dotenv').config();
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import testController from './api/testController';
