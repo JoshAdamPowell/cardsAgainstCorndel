@@ -1,31 +1,7 @@
 
 export default class RoundService {
-    constructor() {
-        this.players = [{
-            username: 'shaquille_oatmeal',
-            score: 8,
-            ID: 1
-        }, {
-            username: 'dildo_swaggins',
-            score: 6,
-            ID: 2
-        },
-        {
-            username: 'in_jail_out_soon',
-            score: 7,
-            ID: 3
-        },
-        {
-            username: 'kiss - my - axe',
-            score: 3,
-            ID: 4
-        },
-        {
-            username: 'hugs_for_drugs',
-            score: 9,
-            ID: 5
-        }
-        ];
+    constructor(players) {
+        this.players = players;
 
     }
 
@@ -39,7 +15,6 @@ export default class RoundService {
     }
 
     getCzar(newGame) {
-        console.log(this.players.length);
         if (newGame) {
             this.currentCzarNum = Math.floor(Math.random() * Math.floor(this.players.length));
             this.currentCzar = this.players[this.currentCzarNum - 1];
