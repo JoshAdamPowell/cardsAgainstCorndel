@@ -1,14 +1,13 @@
 import express from 'express';
 import path from 'path';
-require('dotenv').config();
+
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import testController from './api/testController';
-import LandingController from './api/landingController'
+import testController from './api/controllers/testController';
+import LandingController from './api/controllers/landingController'
 
 class App{
     init(){
-        console.log(process.env)
         const PORT = process.env.PORT || 4001;
         const APP = express();
 
