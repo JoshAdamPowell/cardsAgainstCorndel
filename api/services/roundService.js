@@ -16,13 +16,9 @@ export default class RoundService {
 
     getCzar(newGame) {
         if (newGame) {
-            this.currentCzarNum = Math.floor(Math.random() * this.players.length -1 );
+            this.currentCzarNum = Math.floor(Math.random() * this.players.length - 1);
         } else {
-            if (this.currentCzarNum === this.players.length) {
-                this.currentCzarNum = 0
-            } else {
-                this.currentCzarNum++
-            }
+            this.currentCzarNum === this.players.length ? this.currentCzarNum = 0 : this.currentCzarNum++
         }
         this.currentCzar = this.players[this.currentCzarNum];
         return this.currentCzar;
