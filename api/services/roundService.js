@@ -1,17 +1,21 @@
+import player from '../Objects/player';
+
+
 
 export default class RoundService {
     constructor(players) {
         this.players = players;
+        this.player = new player(1, 'Jay', 10);
 
     }
 
     newRound() {
-        getCzar(newGame)//TODO: newgame is a boolean that is passed in
+        this.getCzar(true)//TODO: newgame is a boolean that is passed in
 
     }
 
     endRound() {
-
+        checkWin();
     }
 
     getCzar(newGame) {
@@ -23,4 +27,20 @@ export default class RoundService {
         this.currentCzar = this.players[this.currentCzarNum];
         return this.currentCzar;
     }
+
+    checkWin() {
+        if (this.player.score === 10) {
+            console.log(this.player.username + ' is the Winner!');
+            return true;
+        }
+        else {
+            this.newRound(this.getCzar());
+        }
+    }
 }
+
+
+
+
+
+
