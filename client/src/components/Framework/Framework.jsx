@@ -112,6 +112,12 @@ export default class Framework extends React.Component {
 						<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
 					</div>
 				</div>
+
+				<div className="section">
+					<div className="scoreboard">
+						
+					</div>
+				</div>
 			</div>
     )
   }
