@@ -1,20 +1,20 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import "brace/mode/html";
-import "brace/mode/css";
+import 'brace/mode/html';
+import 'brace/mode/css';
 import './css/Cards.css';
+import './css/Framework.css';
 import blackCards from './black-cards.js'
 import whiteCards from './white-cards.js'
 import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
 
 export default class Framework extends React.Component {
   constructor(props){
-			super(props)
-			this.state = {
-				blackCard: null,
-				whiteCard: null,
-				combination: null
-			}
+		super(props)
+		this.state = {
+			blackCard: null,
+			whiteCard: null
+		}
   }
 
   componentDidMount(){
@@ -39,7 +39,6 @@ export default class Framework extends React.Component {
 
   render(){
     return (
-      <>
 			<div className="container">
 				<div className="header-body">
 					This is the framework playground and style guide for Cards Against Corndel.<br/>
@@ -113,9 +112,7 @@ export default class Framework extends React.Component {
 						<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
 					</div>
 				</div>
-
 			</div>
-			</>
     )
   }
 }
