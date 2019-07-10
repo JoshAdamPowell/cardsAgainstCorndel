@@ -75,7 +75,7 @@ test('if end of player list, reset to 0', () => {
         });
 })
 
-test('check if the user has won the game', () => {
+test('check if the user has 10 points, if so they win the game', () => {
     const service = new roundService(players);
     service.player = new player(1,'Jay',10);
 
@@ -86,7 +86,7 @@ test('check if the user has won the game', () => {
 
 
 })
-test('If not, start a new game', () => {
+test('If not, start a new round', () => {
     const service = new roundService(players);
     service.player = new player(1,'Jay',8);
 
