@@ -1,4 +1,4 @@
-export default [   {
+export default [{
     "name": "in_jail_out_soon"
 }, {
     "name": "desperate_enuf"

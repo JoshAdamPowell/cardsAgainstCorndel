@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route, Redirect} from "react-router-dom"
 import Game from './components/Game/Game';
 import Home from './components/Landing/Landing';
 import EndGame from './components/EndGame/EndGame';
+import Framework from './components/Framework/Framework'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/game" component={Game} />
       <Route path="/endgame" component={EndGame} />
+      <Route path="/framework" component={Framework} />
     </Router>
   )
 }
