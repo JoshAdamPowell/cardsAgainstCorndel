@@ -1,4 +1,5 @@
 import roundService from '../services/roundService';
+import player from '../Objects/player';
 
 const players = [{
     username: 'shaquille_oatmeal',
@@ -73,3 +74,25 @@ test('if end of player list, reset to 0', () => {
             ID: 1
         });
 })
+
+test('check if the user has won the game', () => {
+    const service = new roundService(players);
+    service.player = new player(1,'Jay',10);
+
+    const result = service.checkWin(true);
+
+    expect(result).toBeTruthy()
+
+
+
+})
+test('If not, start a new game', () => {
+    const service = new roundService(players);
+    service.player = new player(1,'Jay',8);
+
+    const result = service.checkWin(false);
+
+    expect(result).toBeFalsy()
+
+})
+
