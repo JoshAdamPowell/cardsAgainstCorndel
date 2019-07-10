@@ -4,8 +4,8 @@ import 'brace/mode/html';
 import 'brace/mode/css';
 import './css/Cards.css';
 import './css/Framework.css';
-import blackCards from './black-cards.js'
-import whiteCards from './white-cards.js'
+import blackCards from './data/black-cards.js'
+import whiteCards from './data/white-cards.js'
 import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
 
 export default class Framework extends React.Component {
@@ -18,7 +18,7 @@ export default class Framework extends React.Component {
   }
 
   componentDidMount(){
-		document.body.classList.toggle('dark-body', this.props.isDark)
+		document.body.classList.toggle('dark-body')
 		this.changeBlackBody();
 		this.changeWhiteBody();
 	}
