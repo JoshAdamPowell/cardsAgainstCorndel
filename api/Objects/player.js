@@ -4,6 +4,7 @@ export default class player {
         this.username = username;
         this.score = score;
         this.cards = [];
+        this.blackCardsWon = [];
     }
 
     get cards() {
