@@ -36,6 +36,7 @@ export default class RoundService {
                 for (let object of whiteCards) {
                     if (object.state === 'inDeck')
                         players.whitecards.push(object.text);
+                        object["state"] = "inPlay";
                 }
             }
         }
