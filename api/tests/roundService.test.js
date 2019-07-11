@@ -3,26 +3,31 @@ import roundService from '../services/roundService';
 const players = [{
     username: 'shaquille_oatmeal',
     score: 8,
-    ID: 1
+    ID: 1,
+    whitecards:[]
 }, {
     username: 'dildo_swaggins',
     score: 6,
-    ID: 2
+    ID: 2,
+    whitecards:[]
 },
 {
     username: 'in_jail_out_soon',
     score: 7,
-    ID: 3
+    ID: 3,
+    whitecards:[]
 },
 {
     username: 'kiss - my - axe',
     score: 3,
-    ID: 4
+    ID: 4,
+    whitecards:[]
 },
 {
     username: 'hugs_for_drugs',
     score: 9,
-    ID: 5
+    ID: 5,
+    whitecards:[]
 }
 ]
 test('if new game, get a random player to be czar', () => {

@@ -1,3 +1,7 @@
+import whiteCards from '../data/white-cards';
+import blackCards from '../data/black-cards';
+
+
 
 export default class RoundService {
     constructor(players) {
@@ -6,7 +10,9 @@ export default class RoundService {
     }
 
     newRound() {
-        getCzar(newGame)//TODO: newgame is a boolean that is passed in
+        getCzar(newGame);//TODO: newgame is a boolean that is passed in
+        dealCards();
+
 
     }
 
@@ -23,4 +29,18 @@ export default class RoundService {
         this.currentCzar = this.players[this.currentCzarNum];
         return this.currentCzar;
     }
+
+    dealCards() {
+        for (let i = 0; i < players.length; i++) {
+            for (let j = players.whitecards.length; j <= 10; j++) {
+                for (let object of whiteCards) {
+                    if (object.state === 'inDeck')
+                        players.whitecards.push(object.text);
+                }
+            }
+        }
+    }
+    //for every player in the group, give them white cards until they have 10 (nested for loops)
+    //add the card text to the whitecards property as an array item (push)
+    //change whitecard state to 'inplay'
 }
