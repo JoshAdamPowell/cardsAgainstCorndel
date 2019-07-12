@@ -541,8 +541,7 @@ export default [
         "state": "inDeck"
     },
     {
-        "text": "Dear Sir or Madam, We regret to inform you that the Office of <span class='underline'></span> has denied your request for <
-span class='underline'></span>.",
+        "text": "Dear Sir or Madam, We regret to inform you that the Office of <span class='underline'></span> has denied your request for <span class='underline'></span>.",
         "pick": 2,
         "state": "inDeck"
     },
@@ -772,8 +771,7 @@ span class='underline'></span>.",
         "state": "inDeck"
     },
     {
-        "text": "And what did <i>y
-ou</i> bring for show and tell?",
+        "text": "And what did <i>you</i> bring for show and tell?",
         "pick": 1,
         "state": "inDeck"
     },
@@ -993,8 +991,7 @@ ou</i> bring for show and tell?",
         "state": "inDeck"
     },
     {
-        "text": "Help me doctor, I've got <span class='underline'
-></span> in my butt!",
+        "text": "Help me doctor, I've got <span class='underline'></span> in my butt!",
         "pick": 1,
         "state": "inDeck"
     },
@@ -1221,8 +1218,7 @@ ou</i> bring for show and tell?",
     {
         "text": "It's Morphin' Time! Mastadon! Pterodactyl! Triceratops! Sabertooth Tiger! <span class='underline'></span>!",
         "pick": 1,
-        "state
-": "inDeck"
+        "state": "inDeck"
     },
     {
         "text": "I'm a bitch, I'm a lover, I'm a child, I'm <span class='underline'></span>.",
@@ -1460,8 +1456,7 @@ ou</i> bring for show and tell?",
         "state": "inDeck"
     },
     {
-        "text": "Kids these days with their iPods and their Internet. In my day, al
-l we needed to pass the time was <span class='underline'></span>.",
+        "text": "Kids these days with their iPods and their Internet. In my day, all we needed to pass the time was <span class='underline'></span>.",
         "pick": 1,
         "state": "inDeck"
     },
@@ -1698,8 +1693,7 @@ l we needed to pass the time was <span class='underline'></span>.",
     {
         "pick": 1,
         "text": "My name is Inigo Montoya. You killed my father. Prepare for <span class='underline'></span>.",
-        "state
-": "inDeck"
+        "state": "inDeck"
     },
     {
         "pick": 1,
