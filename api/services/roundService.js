@@ -1,7 +1,3 @@
-import blackCards from '../data/black-cards';
-
-
-
 export default class RoundService {
     constructor(players, allWhiteCards) {
         this.players = players;
@@ -31,15 +27,15 @@ export default class RoundService {
         return this.currentCzar;
     }
 
-    dealCards() {
-        for (let currentPlayer of this.players) {
-            for (let j = currentPlayer.whitecards.length; j <= 10; j++) {
-                for (let card of this.whiteCards) {
-                    if (card.state === 'inDeck')
-                        currentPlayer.whitecards.push(card);
-                        card["state"] = "inPlay";
-                }
-            }
-        }
-    }
+    // dealCards() {
+    //     for (let currentPlayer of this.players) {
+    //         for (let card of this.whiteCards) {
+    //             if (card.state === 'inDeck' && currentPlayer.whitecards.length < 10){
+    //                 currentPlayer.whitecards.push(card);
+    //                 card["state"] = "inPlay";
+    //             }
+    //         }
+    //     }
+    // }
 }
+

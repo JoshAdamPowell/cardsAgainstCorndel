@@ -11,9 +11,12 @@ let whiteCards = [
     { text: "The violation of our most basic human rights.", state: "inPlay" },
     { text: "Viagra&reg;.", state: "inDeck" },
     { text: "Self-loathing.", state: "inDeck" },
+    { text: "Concealing a boner.", state: "inDeck" },
 ]
 
-let players = [{
+
+
+let playersArray = [{
     username: 'shaquille_oatmeal',
     score: 8,
     ID: 1,
@@ -83,7 +86,7 @@ test('if new game, get a random player to be czar', () => {
     mockMath.random = () => 1;
     global.Math = mockMath;
 
-    const service = new roundService(players, whiteCards);
+    const service = new roundService(playersArray, whiteCards);
 
     const result = service.getCzar(true);
 
@@ -105,7 +108,7 @@ test('if new game, get a random player to be czar', () => {
 
 test('if not new game, get next player in array to be czar', () => {
 
-    const service = new roundService(players, whiteCards);
+    const service = new roundService(playersArray, whiteCards);
     service.currentCzarNum = 3;
 
     const result = service.getCzar(false);
@@ -129,7 +132,7 @@ test('if not new game, get next player in array to be czar', () => {
 
 test('if end of player list, reset to 0', () => {
 
-    const service = new roundService(players, whiteCards);
+    const service = new roundService(playersArray, whiteCards);
     service.currentCzarNum = 5;
 
     const result = service.getCzar(false);
@@ -151,21 +154,4 @@ test('if end of player list, reset to 0', () => {
     });
 })
 
-test('if player has 8 cards, make sure they have 10', () => {
-    const service = new roundService(players, whiteCards);
 
-    service.dealCards();
-
-    expect(whiteCards).toStrictEqual([
-        { text: "Coat hanger abortions.", state: "inPlay" },
-        { text: "Man meat.", state: "inPlay" },
-        { text: "Autocannibalism.", state: "inPlay" },
-        { text: "Vigorous jazz hands.", state: "inPlay" },
-        { text: "Flightless birds.", state: "inPlay" },
-        { text: "Pictures of boobs.", state: "inPlay" },
-        { text: "Doing the right thing.", state: "inPlay" },
-        { text: "The violation of our most basic human rights.", state: "inPlay" },
-        { text: "Viagra&reg;.", state: "inPlay" },
-        { text: "Self-loathing.", state: "inPlay" },
-    ])
-})
