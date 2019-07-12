@@ -7,13 +7,16 @@ import './css/Framework.css';
 import blackCards from './data/black-cards.js'
 import whiteCards from './data/white-cards.js'
 import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
+import usernames from '../Landing/usernames.js'
+import { thisTypeAnnotation } from '@babel/types';
 
 export default class Framework extends React.Component {
   constructor(props){
 		super(props)
 		this.state = {
 			blackCard: null,
-			whiteCard: null
+			whiteCard: null,
+			scoreboard: []
 		}
   }
 
@@ -21,6 +24,7 @@ export default class Framework extends React.Component {
 		document.body.classList.toggle('dark-body')
 		this.changeBlackBody();
 		this.changeWhiteBody();
+		this.changeScoreboard();
 	}
 	
 	changeBlackBody(){
@@ -34,6 +38,39 @@ export default class Framework extends React.Component {
 		let ranWhiteCard = whiteCards[Math.floor(Math.random() * whiteCards.length)];
 		this.setState({
 			whiteCard: ranWhiteCard
+		})
+	}
+
+	createPlayers(){
+		let divArr = [];
+		for (let i = 0; i < this.state.scoreboard.length; i++){
+			divArr.push(<div className="sb-player">{this.state.scoreboard[i]}</div>)
+		}
+		return divArr;
+	}
+
+	scoreboardHeader(){
+		let heading;
+		if (this.state.scoreboard.length === 1){
+			heading = '1 Player';
+		} else {
+			heading = `${this.state.scoreboard.length} Players`
+		}
+		return heading;
+	}
+
+	changeScoreboard(){
+		let ranAmount = Math.floor(Math.random() * usernames.length)
+		let ranUsers = [];
+
+		if (ranAmount === 0){
+			ranAmount = Math.floor(Math.random() * usernames.length)
+		}
+		for (let i = 0; i < ranAmount; i++){
+			ranUsers.push(usernames[i].name);
+		}
+		this.setState({
+			scoreboard: ranUsers
 		})
 	}
 
@@ -115,9 +152,15 @@ export default class Framework extends React.Component {
 
 				<div className="section">
 					<div className="scoreboard">
-						
+						<div className="sb-header">{this.scoreboardHeader()}</div>
+						<div className="sb-body">{this.createPlayers()}</div>
+					</div>
+					<div className="section-side">
+						<button className="btn-changer" onClick={() => this.changeScoreboard()} type="submit">Test Scoreboard</button>
 					</div>
 				</div>
+
+
 			</div>
     )
   }
