@@ -6,9 +6,8 @@ import './css/Cards.css';
 import './css/Framework.css';
 import blackCards from './data/black-cards.js'
 import whiteCards from './data/white-cards.js'
-import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
+import { scoreboardHTML, scoreboardCSS, whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
 import usernames from '../Landing/usernames.js'
-import { thisTypeAnnotation } from '@babel/types';
 
 export default class Framework extends React.Component {
   constructor(props){
@@ -60,13 +59,13 @@ export default class Framework extends React.Component {
 	}
 
 	changeScoreboard(){
-		let ranAmount = Math.floor(Math.random() * usernames.length)
+		let ranNum = Math.floor(Math.random() * usernames.length)
 		let ranUsers = [];
 
-		if (ranAmount === 0){
-			ranAmount = Math.floor(Math.random() * usernames.length)
+		if (ranNum === 0){
+			ranNum = Math.floor(Math.random() * usernames.length)
 		}
-		for (let i = 0; i < ranAmount; i++){
+		for (let i = 0; i < ranNum; i++){
 			ranUsers.push(usernames[i].name);
 		}
 		this.setState({
@@ -156,6 +155,30 @@ export default class Framework extends React.Component {
 						<div className="sb-body">{this.createPlayers()}</div>
 					</div>
 					<div className="section-side">
+					<h6 className="section-header">HTML</h6>
+						<AceEditor
+							className="editor"
+							mode="html"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={scoreboardHTML}
+							maxLines="4"
+							setOptions={{readOnly: true}}
+						/>
+						<h6 className="section-header">CSS</h6>
+						<AceEditor
+							className="editor"
+							mode="css"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={scoreboardCSS}
+							maxLines="13"
+							setOptions={{readOnly: true}}
+						/>
 						<button className="btn-changer" onClick={() => this.changeScoreboard()} type="submit">Test Scoreboard</button>
 					</div>
 				</div>
