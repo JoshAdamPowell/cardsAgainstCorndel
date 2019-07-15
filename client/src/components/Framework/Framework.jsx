@@ -46,9 +46,9 @@ export default class Framework extends React.Component {
 	}
 
 	scoreboardHeader(){
-		let heading;
-		if (this.state.scoreboard.length <= 1 ? heading = `1 Player` : heading = `${this.state.scoreboard.length} Players`);
-		return heading;
+		let header;
+		if (this.state.scoreboard.length <= 1 ? header = `1 Player` : header = `${this.state.scoreboard.length} Players`);
+		return header;
 	}
 
 	changeScoreboard(){
