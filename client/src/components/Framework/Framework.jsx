@@ -98,7 +98,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={whiteCSS}
-							maxLines="13"
+							maxLines={13}
 							setOptions={{readOnly: true}}
 						/>
 						<button className="btn-changer" onClick={() => this.changeWhiteBody()} type="submit">Test Body</button>
@@ -120,7 +120,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={blackHTML}
-							maxLines="4"
+							maxLines={4}
 							setOptions={{readOnly: true}}
 						/>
 						<h6 className="section-header">CSS</h6>
@@ -132,7 +132,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={blackCSS}
-							maxLines="13"
+							maxLines={13}
 							setOptions={{readOnly: true}}
 						/>
 						<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
@@ -154,7 +154,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={scoreboardHTML}
-							maxLines="4"
+							maxLines={4}
 							setOptions={{readOnly: true}}
 						/>
 						<h6 className="section-header">CSS</h6>
@@ -166,7 +166,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={scoreboardCSS}
-							maxLines="13"
+							maxLines={13}
 							setOptions={{readOnly: true}}
 						/>
 						<button className="btn-changer" onClick={() => this.changeScoreboard()} type="submit">Test Scoreboard</button>
