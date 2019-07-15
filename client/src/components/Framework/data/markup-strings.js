@@ -1,7 +1,7 @@
 export let whiteHTML = `<div className="white-card">
-<div className="white-card-body">
-    <!-- JSON card content -->
-</div>
+	<div className="white-card-body">
+    	<!-- JSON card content -->
+	</div>
 </div>`
 
 export let whiteCSS = `.white-card {
@@ -24,9 +24,9 @@ export let whiteCSS = `.white-card {
 }`
 
 export let blackHTML = `<div className="black-card">
-<div className="black-card-body">
-    <!-- JSON card content -->
-</div>
+	<div className="black-card-body">
+    	<!-- JSON card content -->
+	</div>
 </div>`
 
 export let blackCSS = `.black-card {
@@ -50,6 +50,7 @@ export let blackCSS = `.black-card {
 
 export let scoreboardHTML = `<div className="scoreboard">
 	<div className="sb-header">// number of players</div>
+		<!-- Scoreboard users -->
 	<div className="sb-body">// list of players</div>
 </div>`
 

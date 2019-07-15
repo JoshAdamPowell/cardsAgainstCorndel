@@ -41,30 +41,20 @@ export default class Framework extends React.Component {
 	}
 
 	createPlayers(){
-		let divArr = [];
-		for (let i = 0; i < this.state.scoreboard.length; i++){
-			divArr.push(<div className="sb-player">{this.state.scoreboard[i]}</div>)
-		}
+		let divArr = this.state.scoreboard.map((user, i) => <div className="sb-player" key={i}>{user}</div>)
 		return divArr;
 	}
 
 	scoreboardHeader(){
 		let heading;
-		if (this.state.scoreboard.length === 1){
-			heading = '1 Player';
-		} else {
-			heading = `${this.state.scoreboard.length} Players`
-		}
+		if (this.state.scoreboard.length <= 1 ? heading = `1 Player` : heading = `${this.state.scoreboard.length} Players`);
 		return heading;
 	}
 
 	changeScoreboard(){
-		let ranNum = Math.floor(Math.random() * usernames.length)
+		let ranNum = Math.floor(Math.random() * usernames.length - 1) + 2
 		let ranUsers = [];
 
-		if (ranNum === 0){
-			ranNum = Math.floor(Math.random() * usernames.length)
-		}
 		for (let i = 0; i < ranNum; i++){
 			ranUsers.push(usernames[i].name);
 		}
@@ -96,7 +86,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={whiteHTML}
-							maxLines="4"
+							maxLines={4}
 							setOptions={{readOnly: true}}
 						/>
 						<h6 className="section-header">CSS</h6>
