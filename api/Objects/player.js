@@ -3,18 +3,8 @@ export default class player {
         this.id = id;
         this.username = username;
         this.score = score;
-        this.cards = [];
+       
     }
 
-    get cards() {
-        return this.cards;
-    }
-
-    get points() {
-        return this.score;
-    }
-
-    addCard(card) {
-        this.cards.push(card);
-    }
+    
 }

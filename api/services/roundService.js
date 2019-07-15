@@ -11,6 +11,7 @@ export default class RoundService {
 
     newRound() {
         this.getCzar(true)//TODO: newgame is a boolean that is passed in
+        
 
     }
 
@@ -28,6 +29,10 @@ export default class RoundService {
         return this.currentCzar;
     }
 
+    
+    
+
+
     checkWin() {
         if (this.player.score === 10) {
             console.log(this.player.username + ' is the Winner!');
@@ -36,6 +41,9 @@ export default class RoundService {
         else {
             this.newRound(this.getCzar());
         }
+    }
+    allocatePoint(){
+
     }
 }
 
