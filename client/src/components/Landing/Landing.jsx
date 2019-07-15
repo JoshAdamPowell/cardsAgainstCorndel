@@ -41,6 +41,7 @@ export default class Landing extends React.Component {
 						name="username"
 						type="text"
 						id="username"
+						maxLength="15"
 						placeholder={this.placeholderName.name}
 						onChange={(e) => this.setState({username: e.target.value})} />
 						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
