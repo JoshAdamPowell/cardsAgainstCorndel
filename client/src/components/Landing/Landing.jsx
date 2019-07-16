@@ -7,7 +7,10 @@ export default class Landing extends React.Component {
 	constructor(props){
 		super(props)
 		this.placeholderName = placeholders[Math.floor(Math.random() * placeholders.length)]
-		this.state = {username: ""}
+		this.state = {
+			username: "",
+			redirecting: false
+		}
 	}
 
 	validateForm(){
@@ -22,8 +25,8 @@ export default class Landing extends React.Component {
 		})
 		.then(res => {
 			if (res.status === 200){
-				console.log('Working callback.')
-				// Add redirect to main game.
+				console.log('Redirecting...');
+				setTimeout(() => {window.location.href = '/game'}, 2000);
 			}
 		})
 	}
