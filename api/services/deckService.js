@@ -14,7 +14,6 @@ export default class Deck {
                 }
             }
         }
-
     }
 
     shuffle(deck) {
@@ -22,7 +21,6 @@ export default class Deck {
     }
     checkCardsAreAvailable() {
         let cardsAvailable = this.shuffledDeck.filter(card => card["state"] === "inDeck").length;
-        console.log('cards', cardsAvailable)
         return (cardsAvailable > this.players.length * 3) 
     }
 
@@ -34,6 +32,5 @@ export default class Deck {
 
     reShuffleDeck(deck) {
         this.shuffledDeck = this.shuffledDeck.filter(card => card["state"] === "discarded").map(card => { card["state"] = "inDeck"; return card; });
-
     }
 }
