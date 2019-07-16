@@ -69,6 +69,7 @@
 	box-sizing: border-box;
 	padding: 20px 30px 10px 30px;
 	line-height: 25px;
+	margin: 0 10px 0 10px;
 }
 
 .black-card-body {
@@ -88,6 +89,7 @@
 	box-sizing: border-box;
 	padding: 20px 30px 10px 30px;
 	line-height: 25px;
+	margin: 0 10px 0 10px;
 }
 
 .white-card-body {

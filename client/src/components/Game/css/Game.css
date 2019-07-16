@@ -9,3 +9,38 @@
 	box-sizing: border-box;
 	background-color: #fafafa;
 }
+
+.bc-container {
+	justify-content: center;
+	align-content: space-between;
+
+	margin: 20px 0 20px 0;
+	box-sizing: border-box;
+
+	padding: 25px;
+
+	width: auto;
+	height: 400px;
+
+	display: flex;
+	flex-direction: row;
+
+	background-color: #c2c2c2;
+}
+
+.wc-container {
+	justify-content: center;
+
+	margin: 20px 0 20px 0;
+	box-sizing: border-box;
+
+	padding: 25px;
+
+	width: auto;
+	height: 400px;
+
+	display: flex;
+	flex-direction: row;
+
+	background-color: #c2c2c2;
+}
