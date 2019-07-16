@@ -4,7 +4,6 @@ export default class Deck {
         this.whiteCardDeck = whiteCardDeck.map(cards => (cards))
         this.players = players;
         this.shuffledDeck = this.shuffle(this.whiteCardDeck);
-        console.log(this.shuffledDeck);
     }
     dealCards(whiteCardDeck) {
         for (let currentPlayer of this.players) {
@@ -14,7 +13,6 @@ export default class Deck {
                     card["state"] = "inPlay";
                 }
             }
-            console.log(currentPlayer.whitecards)
         }
 
     }
@@ -22,36 +20,21 @@ export default class Deck {
     shuffle(deck) {
         return deck.sort(() => Math.random() - 0.5)
     }
-    checkCardsAreAvailable(shuffledDeck) {
+    checkCardsAreAvailable(shuffledDeck, players) {
         let cardsAvailable = shuffledDeck.filter(card => card["state"] === "inDeck").length;
         if (cardsAvailable > this.players.length * 3) {
             return true;
         }
     }
 
-    allocateCards(){
-        if (!checkCardsAreAvailable){
+    allocateCards() {
+        if (!checkCardsAreAvailable) {
             reShuffleDeck()
         }
     }
 
     reShuffleDeck(deck) {
-        this.shuffledDeck = this.shuffledDeck.filter(card => card["state"] === "discarded").map(card => {card["state"] = "inDeck"; return card;});
+        this.shuffledDeck = this.shuffledDeck.filter(card => card["state"] === "discarded").map(card => { card["state"] = "inDeck"; return card; });
 
     }
 }
-    
-
-
-// for(let card of shuffledDeck) {
-//     if('nocardshaveinDeckastheirstate'){
-//         while('cardsindeckhave"discarded"asstate') {
-//             if(card["state"] === "discarded"){
-//                 card["state"] = "inDeck";
-//             } else {
-//                 continue;
-//             }
-//         }
-
-//     }
-// }
