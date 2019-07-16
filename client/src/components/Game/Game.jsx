@@ -1,5 +1,4 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
 import './css/Game.css'
 import './css/Scoreboard.css'
 
@@ -9,6 +8,10 @@ export default class Game extends React.Component {
     this.state = {
       scoreboard: []
     }
+  }
+
+  componentDidMount(){
+    this.getCookies();
   }
 
   getCookies(){
@@ -25,7 +28,7 @@ export default class Game extends React.Component {
   }
 
   createPlayers(){
-		let divArr = this.state.scoreboard.map((user, i) => <div className="sb-player" key={i}>{user.User}</div>)
+		let divArr = this.state.scoreboard.map((user, i) => <div className="sb-player" key={i}>{user.User} <span className="sb-score">{user.Score}</span></div>)
 		return divArr;
   }
   
@@ -42,7 +45,6 @@ export default class Game extends React.Component {
 	        <div className="sb-header">{this.scoreboardHeader()}</div>
 	        <div className="sb-body">{this.createPlayers()}</div>
         </div>
-        <button className="button" onClick={() => this.getCookies()} type="submit">Submit</button>
       </div>
     )
   }

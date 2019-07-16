@@ -3,7 +3,6 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import LandingController from './api/controllers/landingController'
-import GameController from './api/controllers/gameController';
 
 class App{
     init(){
@@ -15,7 +14,6 @@ class App{
         APP.use(cookieParser());
 
         LandingController.register(APP);
-        GameController.register(APP);
 
         APP.listen(PORT, () => {
             console.log(`Server listening at port ${PORT}.`);
