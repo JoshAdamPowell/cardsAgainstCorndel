@@ -7,10 +7,7 @@ export default class Landing extends React.Component {
 	constructor(props){
 		super(props)
 		this.placeholderName = placeholders[Math.floor(Math.random() * placeholders.length)]
-		this.state = {
-			username: "",
-			redirecting: false
-		}
+		this.state = {username: ""}
 	}
 
 	validateForm(){

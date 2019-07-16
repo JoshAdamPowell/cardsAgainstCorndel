@@ -1,10 +1,9 @@
 import express from 'express';
 import path from 'path';
-
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import testController from './api/controllers/testController';
 import LandingController from './api/controllers/landingController'
+import GameController from './api/controllers/gameController';
 
 class App{
     init(){
@@ -15,8 +14,8 @@ class App{
         APP.use(bodyParser());
         APP.use(cookieParser());
 
-        testController.register(APP);
         LandingController.register(APP);
+        GameController.register(APP);
 
         APP.listen(PORT, () => {
             console.log(`Server listening at port ${PORT}.`);
