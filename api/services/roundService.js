@@ -1,3 +1,5 @@
+import deckService from './deckService';
+
 export default class RoundService {
     constructor(players, allWhiteCards) {
         this.players = players;
@@ -8,9 +10,7 @@ export default class RoundService {
 
     newRound() {
         getCzar(newGame);//TODO: newgame is a boolean that is passed in
-        dealCards();
-
-
+        deckService.dealCards();
     }
 
     endRound() {
@@ -26,16 +26,5 @@ export default class RoundService {
         this.currentCzar = this.players[this.currentCzarNum];
         return this.currentCzar;
     }
-
-    // dealCards() {
-    //     for (let currentPlayer of this.players) {
-    //         for (let card of this.whiteCards) {
-    //             if (card.state === 'inDeck' && currentPlayer.whitecards.length < 10){
-    //                 currentPlayer.whitecards.push(card);
-    //                 card["state"] = "inPlay";
-    //             }
-    //         }
-    //     }
-    // }
 }
 
