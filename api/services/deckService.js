@@ -19,8 +19,8 @@ export default class Deck {
 
     }
 
-    shuffle() {
-        return this.shuffledDeck.sort(() => Math.random() - 0.5)
+    shuffle(deck) {
+        return deck.sort(() => Math.random() - 0.5)
     }
     checkCardsAreAvailable(shuffledDeck) {
         let cardsAvailable = shuffledDeck.filter(card => card["state"] === "inDeck").length;
