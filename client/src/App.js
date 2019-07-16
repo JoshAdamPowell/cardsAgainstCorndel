@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link, Route, Redirect} from "react-router-dom"
 import Game from './components/Game/Game';
 import Home from './components/Landing/Landing';
 import EndGame from './components/EndGame/EndGame';
-import Framework from './components/Framework/Framework'
+import Framework from './components/Framework/Framework.jsx'
 
 function App() {
   return (

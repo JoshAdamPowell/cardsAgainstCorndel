@@ -65,7 +65,7 @@ export default class Framework extends React.Component {
 
   render(){
     return (
-			<div className="container">
+			<div className="framework-container">
 				<div className="header-body">
 					This is the framework playground and style guide for Cards Against Corndel.<br/>
 					<h5>Reference material used for designing the styling for CAC.</h5>

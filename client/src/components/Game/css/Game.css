@@ -1,0 +1,11 @@
+.game-container {
+  min-width: 1200px;
+	height: 100vh;
+	padding-top: 2em;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	background-color: #fafafa;
+}

@@ -32,7 +32,7 @@
 	flex-direction: column;
 }
 
-.container {
+.framework-container {
 	min-width: 600px;
 	height: 100vh;
 	margin-right: auto;
