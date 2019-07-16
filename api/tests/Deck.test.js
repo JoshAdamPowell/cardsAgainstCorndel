@@ -190,7 +190,7 @@ expect(deckToCheckCards).toStrictEqual([
 
 test('when number of cards is less than players.length * 3 cards available to return true', () => {
     const service = new Deck(deckToCheckCards, players);
-    const result = service.checkCardsAreAvailable;
+    const result = service.checkCardsAreAvailable();
 
 service.checkCardsAreAvailable(deckToCheckCards, players);
 

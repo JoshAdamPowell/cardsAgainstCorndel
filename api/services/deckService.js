@@ -20,11 +20,10 @@ export default class Deck {
     shuffle(deck) {
         return deck.sort(() => Math.random() - 0.5)
     }
-    checkCardsAreAvailable(shuffledDeck, players) {
-        let cardsAvailable = shuffledDeck.filter(card => card["state"] === "inDeck").length;
-        if (cardsAvailable > this.players.length * 3) {
-            return true;
-        }
+    checkCardsAreAvailable() {
+        let cardsAvailable = this.shuffledDeck.filter(card => card["state"] === "inDeck").length;
+        console.log('cards', cardsAvailable)
+        return (cardsAvailable > this.players.length * 3) 
     }
 
     allocateCards() {
