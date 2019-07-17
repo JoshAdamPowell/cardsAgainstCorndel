@@ -129,6 +129,7 @@ export default class Game extends React.Component {
             {this.displayWhiteCards()}
           </div>
         </section>
+        
       </div>
     )
   }
