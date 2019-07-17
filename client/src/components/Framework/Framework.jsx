@@ -6,14 +6,16 @@ import './css/Cards.css';
 import './css/Framework.css';
 import blackCards from './data/black-cards.js'
 import whiteCards from './data/white-cards.js'
-import { whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
+import { scoreboardHTML, scoreboardCSS, whiteHTML, whiteCSS, blackHTML, blackCSS } from './data/markup-strings.js'
+import usernames from '../Landing/usernames.js'
 
 export default class Framework extends React.Component {
   constructor(props){
 		super(props)
 		this.state = {
 			blackCard: null,
-			whiteCard: null
+			whiteCard: null,
+			scoreboard: []
 		}
   }
 
@@ -21,6 +23,7 @@ export default class Framework extends React.Component {
 		document.body.classList.toggle('dark-body')
 		this.changeBlackBody();
 		this.changeWhiteBody();
+		this.changeScoreboard();
 	}
 	
 	changeBlackBody(){
@@ -34,6 +37,29 @@ export default class Framework extends React.Component {
 		let ranWhiteCard = whiteCards[Math.floor(Math.random() * whiteCards.length)];
 		this.setState({
 			whiteCard: ranWhiteCard
+		})
+	}
+
+	createPlayers(){
+		let divArr = this.state.scoreboard.map((user, i) => <div className="sb-player" key={i}>{user}</div>)
+		return divArr;
+	}
+
+	scoreboardHeader(){
+		let header;
+		if (this.state.scoreboard.length <= 1 ? header = `1 Player` : header = `${this.state.scoreboard.length} Players`);
+		return header;
+	}
+
+	changeScoreboard(){
+		let ranNum = Math.floor(Math.random() * usernames.length - 1) + 2
+		let ranUsers = [];
+
+		for (let i = 0; i < ranNum; i++){
+			ranUsers.push(usernames[i].name);
+		}
+		this.setState({
+			scoreboard: ranUsers
 		})
 	}
 
@@ -60,7 +86,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={whiteHTML}
-							maxLines="4"
+							maxLines={4}
 							setOptions={{readOnly: true}}
 						/>
 						<h6 className="section-header">CSS</h6>
@@ -72,7 +98,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={whiteCSS}
-							maxLines="13"
+							maxLines={13}
 							setOptions={{readOnly: true}}
 						/>
 						<button className="btn-changer" onClick={() => this.changeWhiteBody()} type="submit">Test Body</button>
@@ -94,7 +120,7 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={blackHTML}
-							maxLines="4"
+							maxLines={4}
 							setOptions={{readOnly: true}}
 						/>
 						<h6 className="section-header">CSS</h6>
@@ -106,12 +132,48 @@ export default class Framework extends React.Component {
 							width="300px"
 							height="300px"
 							value={blackCSS}
-							maxLines="13"
+							maxLines={13}
 							setOptions={{readOnly: true}}
 						/>
 						<button className="btn-changer" onClick={() => this.changeBlackBody()} type="submit">Test Body</button>
 					</div>
 				</div>
+
+				<div className="section">
+					<div className="scoreboard">
+						<div className="sb-header">{this.scoreboardHeader()}</div>
+						<div className="sb-body">{this.createPlayers()}</div>
+					</div>
+					<div className="section-side">
+					<h6 className="section-header">HTML</h6>
+						<AceEditor
+							className="editor"
+							mode="html"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={scoreboardHTML}
+							maxLines={4}
+							setOptions={{readOnly: true}}
+						/>
+						<h6 className="section-header">CSS</h6>
+						<AceEditor
+							className="editor"
+							mode="css"
+							theme="github"
+							name="code-editor"
+							width="300px"
+							height="300px"
+							value={scoreboardCSS}
+							maxLines={13}
+							setOptions={{readOnly: true}}
+						/>
+						<button className="btn-changer" onClick={() => this.changeScoreboard()} type="submit">Test Scoreboard</button>
+					</div>
+				</div>
+
+
 			</div>
     )
   }

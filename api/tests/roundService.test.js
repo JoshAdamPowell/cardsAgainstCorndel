@@ -1,4 +1,5 @@
 import roundService from '../services/roundService';
+import player from '../Objects/player';
 
 let whiteCards = [
     { text: "Coat hanger abortions.", state: "inPlay" },
@@ -154,4 +155,24 @@ test('if end of player list, reset to 0', () => {
     });
 })
 
+test('check if the user has 10 points, if so they win the game', () => {
+    const service = new roundService(players);
+    service.player = new player(1,'Jay',10);
+
+    const result = service.checkWin(true);
+
+    expect(result).toBeTruthy()
+
+
+
+})
+test('If not, start a new round', () => {
+    const service = new roundService(players);
+    service.player = new player(1,'Jay',8);
+
+    const result = service.checkWin(false);
+
+    expect(result).toBeFalsy()
+
+})
 

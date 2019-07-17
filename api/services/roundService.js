@@ -1,4 +1,7 @@
 import deckService from './deckService';
+import player from '../Objects/player';
+
+
 
 export default class RoundService {
     constructor(players, allWhiteCards) {
@@ -14,7 +17,7 @@ export default class RoundService {
     }
 
     endRound() {
-
+        checkWin();
     }
 
     getCzar(newGame) {
@@ -27,4 +30,28 @@ export default class RoundService {
         return this.currentCzar;
     }
 }
+
+
+    
+    
+
+
+    checkWin() {
+        if (this.player.score === 10) {
+            console.log(this.player.username + ' is the Winner!');
+            return true;
+        }
+        else {
+            this.newRound(this.getCzar());
+        }
+    }
+    allocatePoint(){
+
+    }
+}
+
+
+
+
+
 
