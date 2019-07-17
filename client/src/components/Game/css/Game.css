@@ -9,16 +9,12 @@
 	box-sizing: border-box;
 }
 
-.back {
-	color: #c9c9c9;
-}
-
 .bc-container {
 	justify-content: center;
 	align-items: center;
 	align-content: space-between;
 
-	margin: 20px 0;
+	margin: auto;
 	box-sizing: border-box;
 
 	width: auto;

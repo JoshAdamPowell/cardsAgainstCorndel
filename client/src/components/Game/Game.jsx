@@ -31,10 +31,10 @@ export default class Game extends React.Component {
 
   createWhiteCard(){
     let body = cardService.generateWhiteBody();
-    let card = <div className="white-card">
+    let card = <button className="white-card fadeIn">
         <div className="white-card-body" dangerouslySetInnerHTML={{__html: body}}>
         </div>
-      </div>
+      </button>
     let cardArr = this.state.whiteCards;
     cardArr.push(card);
     this.setState({whiteCards: cardArr})
@@ -50,6 +50,7 @@ export default class Game extends React.Component {
     let cardArr = this.state.whiteCards;
     cardArr.shift();
     this.setState({whiteCards: cardArr});
+
   }
 
   displayBlackCards(){
@@ -110,8 +111,8 @@ export default class Game extends React.Component {
             <div className="sb-body">{this.createPlayers()}</div>
           </div>
           <button className="btn btn-black" disabled={!this.checkBlackCards()} onClick={() => this.createBlackCard()} type="submit">Create Black Card</button>
-          <button className="btn btn-black" disabled={!this.checkWhiteCards()} onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
           <button className="btn btn-black" onClick={() => this.deleteBlackCard()} type="submit">Delete Black Card</button>
+          <button className="btn btn-black" disabled={!this.checkWhiteCards()} onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
           <button className="btn btn-black" onClick={() => this.deleteWhiteCard()} type="submit">Delete White Card</button>
           <button className="btn btn-black" onClick={() => this.navigateHome()} type="submit">Home</button>
           <button className="btn btn-black" onClick={() => this.navigateFramework()} type="submit">Framework</button>
