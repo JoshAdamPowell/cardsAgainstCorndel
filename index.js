@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import testController from './api/controllers/testController';
 import LandingController from './api/controllers/landingController'
 
+
 class App{
     init(){
         const PORT = process.env.PORT || 4001;
@@ -23,6 +24,7 @@ class App{
         });
     }
 }
+
 
 let program = new App()
 program.init();
