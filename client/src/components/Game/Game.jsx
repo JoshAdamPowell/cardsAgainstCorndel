@@ -60,6 +60,22 @@ export default class Game extends React.Component {
     return this.state.whiteCards;
   }
 
+  navigateHome(){
+    window.location = "/";
+  }
+
+  navigateFramework(){
+    window.location = "/framework";
+  }
+
+  checkWhiteCards(){
+    return this.state.whiteCards.length <= 9;
+  }
+
+  checkBlackCards(){
+    return this.state.blackCards.length < 1;
+  }
+
   getCookies(){
     let players = [];
     let allCookies = document.cookie;
@@ -93,10 +109,12 @@ export default class Game extends React.Component {
             <div className="sb-header">{this.scoreboardHeader()}</div>
             <div className="sb-body">{this.createPlayers()}</div>
           </div>
-          <button className="btn btn-black" onClick={() => this.createBlackCard()} type="submit">Create Black Card</button>
-          <button className="btn btn-black" onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
+          <button className="btn btn-black" disabled={!this.checkBlackCards()} onClick={() => this.createBlackCard()} type="submit">Create Black Card</button>
+          <button className="btn btn-black" disabled={!this.checkWhiteCards()} onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
           <button className="btn btn-black" onClick={() => this.deleteBlackCard()} type="submit">Delete Black Card</button>
           <button className="btn btn-black" onClick={() => this.deleteWhiteCard()} type="submit">Delete White Card</button>
+          <button className="btn btn-black" onClick={() => this.navigateHome()} type="submit">Home</button>
+          <button className="btn btn-black" onClick={() => this.navigateFramework()} type="submit">Framework</button>
         </section>
 
         <section>
