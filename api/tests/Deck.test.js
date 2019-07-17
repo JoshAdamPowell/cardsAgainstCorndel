@@ -1,6 +1,20 @@
 import Deck from '../services/deckService';
 
-let whiteCards = [
+let whiteCardsInPlay = [
+    { text: "Coat hanger abortions.", state: "inDeck" },
+    { text: "Man meat.", state: "inDeck" },
+    { text: "Autocannibalism.", state: "inDeck" },
+    { text: "Vigorous jazz hands.", state: "inDeck" },
+    { text: "Flightless birds.", state: "inDeck" },
+    { text: "Pictures of boobs.", state: "inDeck" },
+    { text: "Doing the right thing.", state: "inDeck" },
+    { text: "The violation of our most basic human rights.", state: "inDeck" },
+    { text: "Viagra&reg;.", state: "inDeck" },
+    { text: "Self-loathing.", state: "inDeck" },
+    { text: "Concealing a boner.", state: "inDeck" },
+]
+
+let whiteCardsToCheck = [
     { text: "Coat hanger abortions.", state: "inDeck" },
     { text: "Man meat.", state: "inDeck" },
     { text: "Autocannibalism.", state: "inDeck" },
@@ -70,6 +84,20 @@ let deckToCheckCards = [
     { text: "Concealing a boner.", state: "inDeck" },
 ]
 
+let deckToReShuffle = [
+    { text: "Coat hanger abortions.", state: "inDeck" },
+    { text: "Man meat.", state: "inPlay" },
+    { text: "Autocannibalism.", state: "inDeck" },
+    { text: "Vigorous jazz hands.", state: "inPlay" },
+    { text: "Flightless birds.", state: "inPlay" },
+    { text: "Pictures of boobs.", state: "inDeck" },
+    { text: "Doing the right thing.", state: "inDeck" },
+    { text: "The violation of our most basic human rights.", state: "inPlay" },
+    { text: "Viagra&reg;.", state: "inPlay" },
+    { text: "Self-loathing.", state: "inDeck" },
+    { text: "Concealing a boner.", state: "inDeck" },
+]
+
 let players =
     [{
         username: 'shaquille_oatmeal',
@@ -80,11 +108,11 @@ let players =
 
 
 test('if card is played, change status to "inPlay"', () => {
-    const service = new Deck(whiteCards, players);
-
-service.dealCards(whiteCards);
-
-expect(whiteCards).toStrictEqual([
+    const service = new Deck(whiteCardsInPlay, players);
+    service.shuffledDeck = whiteCardsInPlay;
+service.dealCards(whiteCardsInPlay);
+    console.log(whiteCardsInPlay)
+expect(whiteCardsInPlay).toStrictEqual([
     { text: "Coat hanger abortions.", state: "inPlay" },
     { text: "Man meat.", state: "inPlay" },
     { text: "Autocannibalism.", state: "inPlay" },
@@ -100,9 +128,9 @@ expect(whiteCards).toStrictEqual([
 })
 
 test('check all players have 10 cards', () => {
-    const service = new Deck(whiteCards, players);
+    const service = new Deck(whiteCardsToCheck, players);
 
-service.dealCards(whiteCards);
+service.dealCards(whiteCardsToCheck);
 
 expect(players[0].whitecards.length).toBe(10);
 })
@@ -169,11 +197,11 @@ expect(inDeckCards).toStrictEqual([
 })
 
 test('when cards are reshuffled, change "discarded" cards but not others', () => {
-    const service = new Deck(deckToCheckCards, players);
+    const service = new Deck(deckToReShuffle, players);
 
-service.reShuffleDeck(deckToCheckCards);
+service.reShuffleDeck(deckToReShuffle);
 
-expect(deckToCheckCards).toStrictEqual([
+expect(deckToReShuffle).toStrictEqual([
     { text: "Coat hanger abortions.", state: "inDeck" },
     { text: "Man meat.", state: "inPlay" },
     { text: "Autocannibalism.", state: "inDeck" },

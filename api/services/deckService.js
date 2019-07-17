@@ -5,9 +5,9 @@ export default class Deck {
         this.players = players;
         this.shuffledDeck = this.shuffle(this.whiteCardDeck);
     }
-    dealCards(whiteCardDeck) {
+    dealCards() {
         for (let currentPlayer of this.players) {
-            for (let card of whiteCardDeck) {
+            for (let card of this.shuffledDeck) {
                 if (card.state === 'inDeck' && currentPlayer.whitecards.length < 10) {
                     currentPlayer.whitecards.push(card);
                     card["state"] = "inPlay";

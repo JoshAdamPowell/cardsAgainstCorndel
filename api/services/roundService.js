@@ -1,15 +1,15 @@
 import deckService from './deckService';
-import player from '../Objects/player';
 
 export default class RoundService {
-    constructor(players, allWhiteCards) {
-        this.players = player;
+    constructor(allWhiteCards, players) {
+        this.players = players;
         this.whiteCards = allWhiteCards;
+        this.deckService = new deckService(allWhiteCards, players)
 
     }
     newRound(newGame) {
-        getCzar(newGame);//TODO: newgame is a boolean that is passed in
-        deckService.dealCards();
+        this.getCzar(newGame);//TODO: newgame is a boolean that is passed in
+        this.deckService.dealCards();
     }
 
     endRound() {
@@ -26,13 +26,13 @@ export default class RoundService {
         return this.currentCzar;
     }
     checkWin() {
-        if (this.player.score === 10) {
-            console.log(this.player.username + ' is the Winner!');
-            return true;
+        for (let player of this.players){
+            if (player.score === 10) {
+                console.log(player.username + ' is the Winner!');
+                return true;
+            }
         }
-        else {
-            this.newRound(false);
-        }
+        return this.newRound(false)
     }
     allocatePoint(){
 
