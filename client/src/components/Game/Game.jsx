@@ -87,17 +87,16 @@ export default class Game extends React.Component {
     return (
       <div className="game-container">
 
-        <section>
+        <section className="game-top">
           <div className="game-scoreboard">
             <div className="sb-header">{this.scoreboardHeader()}</div>
             <div className="sb-body">{this.createPlayers()}</div>
           </div>
+          <button className="btn btn-black" onClick={() => this.createBlackCard()} type="submit">Create Black Card</button>
+          <button className="btn btn-black" onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
+          <button className="btn btn-black" onClick={() => this.deleteBlackCard()} type="submit">Delete Black Card</button>
+          <button className="btn btn-black" onClick={() => this.deleteWhiteCard()} type="submit">Delete White Card</button>
         </section>
-
-        <button onClick={() => this.createBlackCard()} type="submit">Create Black Card</button>
-        <button onClick={() => this.createWhiteCard()} type="submit">Create White Card</button>
-        <button onClick={() => this.deleteBlackCard()} type="submit">Delete Black Card</button>
-        <button onClick={() => this.deleteWhiteCard()} type="submit">Delete White Card</button>
 
         <section>
           <div className="bc-container">

@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-	background-color: #fafafa;
+	background-color: #e2e2e2;
 }
 
 .bc-container {
@@ -24,8 +24,6 @@
 
 	display: flex;
 	flex-direction: row;
-
-	background-color: #c2c2c2;
 }
 
 .wc-container {
@@ -41,6 +39,33 @@
 
 	display: flex;
 	flex-direction: row;
+}
 
-	background-color: #c2c2c2;
+.btn {
+	margin: 5px;
+	border-radius: 7.5px;
+	border: none;
+	width: 100px;
+	height: auto;
+	box-sizing: border-box;
+	padding: 10px;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.btn-black {
+	background-color: #202020;
+	color: #fafafa;
+}
+
+.btn-white {
+	background: #fafafa;
+	color: #202020;
+}
+
+.game-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
