@@ -18,6 +18,10 @@ export default class Game extends React.Component {
     document.body.style.backgroundColor = "#dadada" /*Grey*/
   }
 
+  test(){
+    console.log('test');
+  }
+
   createBlackCard(){
     let body = cardService.generateBlackBody();
     let card = <div className="black-card">
@@ -119,13 +123,13 @@ export default class Game extends React.Component {
         </section>
 
         <section>
-          <div className="bc-container">
+          <div className="card-container">
             {this.displayBlackCards()}
           </div>
         </section>
 
         <section>
-          <div className="wc-container">
+          <div className="card-container">
             {this.displayWhiteCards()}
           </div>
         </section>
