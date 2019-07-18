@@ -7,7 +7,9 @@ export default class Landing extends React.Component {
 	constructor(props){
 		super(props)
 		this.placeholderName = placeholders[Math.floor(Math.random() * placeholders.length)]
-		this.state = {username: ""}
+		this.state = {
+			username: ""
+		}
 	}
 
 	validateForm(){
@@ -23,7 +25,7 @@ export default class Landing extends React.Component {
 		.then(res => {
 			if (res.status === 200){
 				console.log('Redirecting...');
-				setTimeout(() => {window.location.href = '/game'}, 2000);
+				window.location.href = '/game';
 			}
 		})
 	}
@@ -44,7 +46,7 @@ export default class Landing extends React.Component {
 						maxLength="15"
 						placeholder={this.placeholderName.name}
 						onChange={(e) => this.setState({username: e.target.value})} />
-						<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
+					<button className="submit-btn" disabled={!this.validateForm()} onClick={() => this.handleSubmit()} type="submit">Onwards!</button>
 				</div>
 			</div>
 		)
