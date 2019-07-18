@@ -15,7 +15,7 @@ export default class Game extends React.Component {
 
   componentDidMount(){
     this.getCookies();
-    document.body.style.backgroundColor = "#dadada"
+    document.body.style.backgroundColor = "#dadada" /*Grey*/
   }
 
   createBlackCard(){

@@ -13,34 +13,26 @@
 	justify-content: center;
 	align-items: center;
 	align-content: space-between;
-
 	margin: auto;
 	margin-top: 20px;
 	box-sizing: border-box;
-
 	width: 50%;
 	height: auto;
-
 	display: flex;
 	flex-direction: row;
-	/* background-color: #4d4d4d; */
 }
 
 .wc-container {
 	justify-content: center;
 	align-items: center;
 	align-content: space-between;
-
 	margin: auto;
 	margin-top: 20px;
 	box-sizing: border-box;
-
 	width: 50%;
 	height: auto;
-
 	display: flex;
 	flex-direction: row;
-	/* background-color: #4d4d4d; */
 	flex-wrap: wrap;
 }
 
